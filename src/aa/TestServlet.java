@@ -33,7 +33,7 @@ public class TestServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		//设置允许跨域访问，因为它，可以把index.html拿到桌面上访问服务器，实现前后分离
+		//设置允许跨域访问，因为它，可以把fenli.html拿到桌面上访问服务器，实现前后分离
 		response.setHeader("Access-Control-Allow-Origin", "*");
 		
 		

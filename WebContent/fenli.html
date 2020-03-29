@@ -17,8 +17,10 @@
   }
 
   function bb(){
-	 var s = $('#first').val();
-	 alert(s);
+	     var s = $('#first').val();
+		 var b = $('#second').val();
+		 var c = parseInt(s)+parseInt(b);
+		 alert('加数1+加数2='+c);
   }
  
  </script>
@@ -28,8 +30,8 @@
 <div>
 <form id="form" action="http://localhost:8999/hello/TestServlet" method="get">
         <p>本html可以拿出来放到桌面上，实现和服务器分离交互</p>
-        加数:<input type="text" name="first" id="first"><br>
-        加数:<input type="text" name="second" id="second"><br>       
+        加数1:<input type="text" name="first" id="first"><br>
+        加数2:<input type="text" name="second" id="second"><br>       
         <input type="button" value="ajax按钮" onclick="ajaxFun()"/><br>
         <input type="submit" value="form提交按钮"/><br>  
 </form>

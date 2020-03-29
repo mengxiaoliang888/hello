@@ -18,7 +18,9 @@
 
   function bb(){
 	 var s = $('#first').val();
-	 alert(s);
+	 var b = $('#second').val();
+	 var c = parseInt(s)+parseInt(b);
+	 alert('加数1+加数2='+c);
   }
  
  </script>
@@ -27,12 +29,12 @@
 
 <div>
 <form id="form" action="TestServlet" method="get">
-        first:<input type="text" name="first" id="first"><br>
-        second:<input type="text" name="second" id="second"><br>       
+        加数1:<input type="text" name="first" id="first"><br>
+        加数2:<input type="text" name="second" id="second"><br>       
         <input type="button" value="ajax按钮" onclick="ajaxFun()"/><br><br>
         <input type="submit" value="form提交按钮"/><br>  
 </form>
-    <input type="text" id="result">  <br> 
+    求和<input type="text" id="result">  <br> 
     <input type="button" value="测试按钮" onclick="bb()"/>
     </div>
 </body>

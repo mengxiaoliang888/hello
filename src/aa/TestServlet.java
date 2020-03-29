@@ -32,7 +32,12 @@ public class TestServlet extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setHeader("Access-Control-Allow-Origin", "*");//设置允许跨域访问
+		
+		//设置允许跨域访问，因为它，可以把index.html拿到桌面上访问服务器，实现前后分离
+		response.setHeader("Access-Control-Allow-Origin", "*");
+		
+		
+		
 		request.setCharacterEncoding("utf-8");		
 		PrintWriter out = response.getWriter();
 		int first = Integer.parseInt(request.getParameter("first")); 

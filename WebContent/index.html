@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+  function ajaxFun(){
+  $.ajax({
+         type: "POST",                           //传数据的方式
+         url: "TestServlet", //servlet地址       
+         data: $('#form').serialize(),      //传的数据  form表单 里面的数据
+         success: function(result){       //传数据成功之后的操作   result是servlet传过来的数据  这个函数对result进行处理，让它显示在 输入框中
+         $("#result").val(result);           //找到输入框 并且将result的值 传进去
+         }
+     });
+  }
+
+  function bb(){
+	 var s = $('#first').val();
+	 alert(s);
+  }
+ 
+ </script>
+</head>
+<body>
+
+<div>
+<form id="form" action="TestServlet" method="get">
+        first:<input type="text" name="first" id="first"><br>
+        second:<input type="text" name="second" id="second"><br>       
+        <input type="button" value="ajax按钮" onclick="ajaxFun()"/><br><br>
+        <input type="submit" value="form提交按钮"/><br>  
+</form>
+    <input type="text" id="result">  <br> 
+    <input type="button" value="测试按钮" onclick="bb()"/>
+    </div>
+</body>
+</html>
